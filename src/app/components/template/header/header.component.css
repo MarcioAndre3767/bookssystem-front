@@ -1,0 +1,25 @@
+img {
+    padding: 0 14px;
+    height: 4rem;
+}
+
+.header {    
+    justify-content: center;
+   
+    
+    height: 15%;
+}
+
+span {
+    display: flex;
+    align-items: center;
+}
+
+h1 {
+    
+    font-weight: bolder;
+    padding-left: .6rem;
+    font-size: 1.4rem;
+    letter-spacing: 4px;
+    word-spacing: 5px;
+}
