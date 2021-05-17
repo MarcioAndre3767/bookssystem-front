@@ -23,11 +23,28 @@ export class CategoriaService {
   }
 
 
+  //servico-buscando categoria por id p/ 'delete'
+
+  findById(id: String): Observable<Categoria> {
+    const url = `${this.baseUrl}/categorias/${id}`
+    return this.Http.get<Categoria>(url)
+  }
+
+
   //servico-criando categoria
   create(categoria: Categoria): Observable<Categoria> {
     const url = `${this.baseUrl}/categorias`
     return this.Http.post<Categoria>(url, categoria)
   }
+
+
+
+  //deletando categoria
+  delete(id: String):Observable<void> {
+    const url = `${this.baseUrl}/categorias/${id}`
+    return this.Http.delete<void>(url);
+  }
+
 
   //mensagem-criando categoria com sucesso
   mensagem(str: String): void {
