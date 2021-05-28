@@ -19,7 +19,7 @@ export class LivroService {
   }
 
   findById(id: String):Observable<livro>{
-    const url = `{this.baseUrl}/livros/${id}`
+    const url = `${this.baseUrl}/livros/${id}`
     return this.http.get<livro>(url)
   }
 
@@ -31,6 +31,12 @@ export class LivroService {
   create(livro: livro, id_cat: String): Observable<livro> {
     const url = `${this.baseUrl}/livros?categoria=${id_cat}`;
     return this.http.post<livro>(url, livro);
+  }
+
+
+  delete(id: String):Observable<void> {
+    const url = `${this.baseUrl}/livros/${id}`
+    return this.http.delete<void>(url)
   }
 
   mensagem(str: String): void {
